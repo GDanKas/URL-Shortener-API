@@ -11,7 +11,7 @@
 }
 
 body {
-    padding: 3rem 2rem;
+    padding: 3rem 3rem;
     font-size: 1.8rem;
     font-family: 'Poppins', sans-serif;
 }
@@ -66,18 +66,20 @@ body {
 /*NAV ELEMENT*/
 .nav-purple {
     position: absolute;
-    top: 6.5rem;
+    top: 8.5rem;
     left: 0;
     right: 0;
     background: #3a3053;
-    height: 50%;
-    max-width: 100%;
+    min-height: 50%;
+    max-width: 90%;
     margin: 0 2rem;
     border-radius: 1rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .nav-purple ul {
@@ -85,10 +87,36 @@ body {
 }
 
 .nav-purple ul li a{
+    font-weight: bold;
     text-decoration: none;
     color: #fff;
 }
+
+.nav-purple hr {
+    width: 100%;
+    border: 1px solid #51476a;
+}
+
+.nav-login li, .nav-bar li {
+    margin: 3rem 0;
+}
 /*END NAV ELEMENT*/
+
+/*ROUNDED BUTTON*/
+.nav-login {
+    width: 100%;
+}
+
+.nav-login li:nth-child(2) {
+    display: flex;
+}
+
+.nav-login li a.btn-rounded{
+    flex: 1;
+    background: hsl(180, 66%, 49%);
+    padding: 2rem;
+    border-radius: 4rem;
+}
 
 /* CONTROLS HIDDEN ELEMENTS */
 .hidden {
