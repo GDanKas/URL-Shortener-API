@@ -80,6 +80,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+    display: none; /* TESTE */
 }
 
 .nav-purple ul {
@@ -116,7 +117,17 @@ body {
     background: hsl(180, 66%, 49%);
     padding: 2rem;
     border-radius: 4rem;
+    transition: all 0.3s ease;
 }
+
+.nav-login li a.btn-rounded:hover{
+    background: #9BE3E2;
+}
+/*ROUNDED BUTTON*/
+
+/*BANNER*/
+
+
 
 /* CONTROLS HIDDEN ELEMENTS */
 .hidden {
