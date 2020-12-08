@@ -284,7 +284,7 @@ main {
 }
 /*END ADVANCED STATS HEADER*/
 
-/*ADVANCED STATS GRID*/
+/*ADVANCED STATS FLEX*/
 .advanced-cards-container {
     display: flex;
     flex-direction: column;
@@ -332,7 +332,32 @@ main {
     height: 6rem;
     background: var(--secondary);
 }
-/*END ADVANCED STATS GRID*/
+/*END ADVANCED STATS FLEX*/
+
+/*BOOST LINKS SECTION*/
+.boost {
+    position: relative;
+    left: -3rem;
+    width: 100vw;
+    background: url(../images/bg-boost-mobile.svg) no-repeat;
+    background-size: 100% 100%;
+    background-color: hsl(257, 27%, 26%);
+    padding: 8rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.boost a {
+    text-decoration: none;
+    color: white;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+}
+
+/*END BOOST LINKS SECTION*/
 
 /* CONTROLS HIDDEN ELEMENTS */
 .hidden {
