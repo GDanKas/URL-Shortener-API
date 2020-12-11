@@ -202,6 +202,10 @@ main {
     color: var(--placeholder-text);
 }
 
+.placeholder-invalid::placeholder {
+    color: red;
+}
+
 .shortener .url-to-shorten {
     flex: 1;
     padding: 1.4rem;
@@ -439,4 +443,10 @@ footer ul {
 /* CONTROLS HIDDEN ELEMENTS */
 .hidden {
     display: none;
+}
+
+@media screen and (min-width:769px) {
+    .menu-btn {
+        display: none;
+    }
 }
