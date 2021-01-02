@@ -32,11 +32,27 @@ function setInputError() {
     }
 }
 
+/*function copyLink() {
+    let arr = this.parentNode.parentNode.childNodes
+    console.log(arr)
+    console.log(this.parentNode.parentNode.childNodes[5].childNodes[7])
+    if (this.parentNode.childNodes[7].classList[0] === 'btn-squared') {
+        this.parentNode.childNodes[7].classList.toggle('btn-squared-active');
+    }
+}*/
+
 function copyLink() {
+    console.log(this.parentNode.parentNode.childNodes)
     if (this.classList[0] == 'btn-squared') {
-        this.classList.add('btn-squared-active');
-        this.classList.remove('btn-squared');
+        for (let i=1; i < this.parentNode.parentNode.childNodes.length; i+= 2) {
+            this.parentNode.parentNode.childNodes[i].childNodes[7].classList.remove('btn-squared-active'); 
+            this.innerText = "Copy!";
+        }
+        this.classList.toggle('btn-squared-active');
+        if (this.innerText === 'Copy!')
         this.innerText = "Copied!";
+        else 
+        this.innerText = "Copy!";
     } 
     console.log(this.parentNode.parentNode.childNodes);
-}
+} 
