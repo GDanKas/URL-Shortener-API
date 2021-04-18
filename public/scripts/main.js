@@ -4,7 +4,7 @@ let shortenerInput = document.querySelector('.shortener input');
 let shortenerButton = document.getElementById('main-button');
 let shortenedLinks = document.querySelector('.shortened-links');
 let linkContainer = document.querySelectorAll('.shortened-links .link-container');
-let shortenedButtons = document.querySelectorAll('.shortened-links .link-container .btn-squared');
+//let shortenedButtons = document.querySelectorAll('.shortened-links .link-container .btn-squared');
 
 let signCreated = false;
 //shortenerInput.oninvalid = setInputError;
@@ -17,10 +17,14 @@ function shortenedRefresher() {
 
 shortenedRefresher();
 
-shortenerButton.addEventListener("click", () => fetchAPI)
+shortenerButton.addEventListener("click", fetchAPI)
+shortenerInput.addEventListener("keydown", e => {
+    if (e.keyCode == 13)
+    fetchAPI();
+})
 
-function setInputError2() {
-    let isvalidURL = validURL(shortenerInput.value);
+function setInputError2(x) {
+    let isvalidURL = validURL(x);
     if (!isvalidURL) {
         shortenerInput.setAttribute("style", "border: 2px solid var(--error); ")
         shortenerInput.classList.add('placeholder-invalid');
@@ -80,12 +84,18 @@ function copyLink() {
             this.parentNode.parentNode.childNodes[i].childNodes
             [this.parentNode.parentNode.childNodes.length].innerText = "Copy!";
         }*/
-        linkContainer.forEach(element => {
-            let buttons = element.querySelectorAll('.btn-squared');
+        let shortenedButtons = document.querySelectorAll('.shortened-links .link-container .btn-squared');
+        shortenedButtons.forEach (element => {
+            element.classList.remove('btn-squared-active');
+            element.innerText = "Copy!"
+        })
+        /*linkContainer.forEach(element => {
+            console.log(element);
+            let buttons = element.querySelector('.btn-squared');
             buttons.classList.remove('btn-squared-active');
             buttons.innerText = "Copy!";
-            console.log(buttons)
-        });
+            console.log(buttons);
+        });*/
         this.classList.toggle('btn-squared-active');
         if (this.innerText == "Copy!")
             this.innerText = "Copied!";
@@ -108,8 +118,9 @@ function copyLink() {
 
 function fetchAPI() {
     let x = shortenerInput.value;
-    console.log(x)
-    if (setInputError2()) {
+    shortenerInput.value = "";
+    
+    if (setInputError2(x)) {
         fetch(`https://api.shrtco.de/v2/shorten?url=${x}`)
             .then(res => res.json())
             .then(data => {
@@ -134,7 +145,6 @@ function fetchAPI() {
                 newLinkContainer.appendChild(copyButton);
                 shortenedLinks.appendChild(newLinkContainer);                
 
-                console.log(data.result);
                 shortenedRefresher();
             });
     }
