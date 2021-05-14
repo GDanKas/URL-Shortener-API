@@ -38,8 +38,8 @@ body {
     position: absolute;
     top: 0px;
     left: 0px;
-    min-width: 100%;
-    height: 90rem;
+    width: 100%;
+    height: 85rem;
     background-color: white;
     z-index: -1;
 }
@@ -101,10 +101,10 @@ main {
 .nav-purple {
     position: absolute;
     top: 8.5rem;
-    left: 0;
-    right: 0.9rem;
+    left: 2vw;
+    right: 2vw;
     background: var(--primary);
-    min-height: 50%;
+    min-height: 40rem;
     max-width: 90%;
     margin: 0 2rem;
     border-radius: 1rem;
@@ -165,6 +165,7 @@ main {
     margin-top: 3rem;
     text-align: center;
     color: var(--plain-text);
+    margin: 0 auto;
 }
 
 .banner .banner-text h1 {
@@ -410,7 +411,6 @@ footer ul {
     align-items: center;
     justify-content: space-between;
 }
-
 /*END FOOTER*/
 
 /*BUTTON PRESETS*/
@@ -450,13 +450,160 @@ footer ul {
 }
 /*END BUTTON PRESETS*/
 
+/*LOADING DOTS*/
+.loading-dots {
+    text-align: center;
+    min-width: 100%;
+    margin-top: 2rem;
+    display: none;
+}
+
+.loading-dots > div {
+    width: 3rem;
+    height: 3rem;
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    animation: 1.5s bounce infinite ease-in-out both;
+}
+
+.loading-dots .bounce {
+    animation-delay: -0.3s;
+}
+
+.loading-dots .bounce2 {
+    animation-delay: -0.15s;
+}
+/*END LOADING DOTS*/
+
 /* CONTROLS HIDDEN ELEMENTS */
 .hidden {
     display: none;
 }
+/* END CONTROLS HIDDEN ELEMENTS */
+
+@media screen and (min-width:768px) {
+    .background {
+        height: 116rem;
+    }
+}
 
 @media screen and (min-width:769px) {
+    /* VITALS */
+    body {
+        padding: 3rem 10vw ;
+    }
+    .hidden {
+        display: flex;
+    }
     .menu-btn {
         display: none;
+    }
+    .background {
+        height: 74rem;
+    }
+    /* END VITALS */
+    
+    /* NAV */
+    .nav img {
+        margin: 0 1rem 0 0;
+    }
+    .nav-purple {
+        position: initial;
+        background: #fff;
+        height: 10rem;
+        width: 100%;
+        min-height: auto;
+        max-width: auto;
+        padding: 0;
+        margin: 0;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .nav-purple ul li a{
+        color: var(--plain-text);
+    }
+    .nav-purple ul li a:hover {
+        color: black;
+    }
+    .nav-purple ul {
+        min-width: 40%;
+        display: flex;
+        align-items: center;
+    }
+    .nav-purple .nav-login {
+        max-width: 100px;
+        justify-content: flex-end;
+    }
+    .nav-login a.btn-rounded {
+        padding: 1rem 3rem;
+        color: #fff;
+    }
+    .nav-purple ul li {
+        display: flex;
+        justify-content: space-between;
+    }
+    .nav-purple hr {
+        display: none;
+    }
+    .nav-login li, .nav-bar li {
+        margin: 3rem 1rem;
+    }
+    /* END NAV */
+
+    /*BANNER*/
+    .banner {
+        display: flex;
+        flex-wrap: nowrap;
+        margin-bottom: 10rem;
+        align-items: center;
+    }
+    .banner .banner-text {
+        text-align: left;
+        padding-right: 5vw;
+    }
+    .banner .banner-text h1{
+        font-size: 7rem;
+    }
+    .banner .banner-text p {
+        margin-top: -1rem;
+        font-size: 2rem;
+    }
+    .banner .banner-img {
+        
+    }
+    /*END BANNER*/
+
+    /*SHORTENER*/
+    .shortener { 
+        background: url(../images/bg-shorten-desktop.svg) no-repeat;
+        background-size: 100% 100%;
+        background-color: hsl(257, 27%, 26%);
+        padding: 2rem;
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    /*END SHORTENER*/
+
+    /*ADVANCED STATS*/
+    .advanced-header {
+        padding: 0 20vw;
+    }
+
+    /*END ADVANCED STATS*/
+}
+
+/* @media screen and (min-width:1366px) {
+    .background {
+        height: 89rem;
+    }
+} */
+
+@media screen and (min-width:2560px) {
+    .background {
+        height: 100rem;
     }
 }

@@ -61,6 +61,11 @@
     <div class="shortener">
       <input  class="url-to-shorten" type="url" placeholder="Shorten a link here..." required/>
       <button id="main-button" class="btn-squared" onclick="fetchAPI()"><span>Shorten It!</span></button>
+      <div class="loading-dots">
+        <div class="bounce"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
     </div>
     <div class="shortened-links">
      <!-- <div class="link-container">
@@ -164,11 +169,9 @@
       </li>
     </ul>
   </footer>
-  <!--
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>. </div>
-  -->
+    Coded by <a href="https://github.com/GDanKas" target="_blank">Daniel Castro</a>. </div>
   <div class="background"></div>
   <script src="./public/scripts/animations.js"></script>
   <script src="./public/scripts/main.js"></script>

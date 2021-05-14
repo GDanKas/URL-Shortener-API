@@ -11,3 +11,12 @@
 .menu-btn.burger-open .menu-btn__burger::after {
     transform: rotate(-45deg) translate(35px, 35px);
 }
+
+@keyframes bounce {
+    0%,80%,100% {
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(1);
+    }
+}

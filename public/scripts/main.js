@@ -4,7 +4,9 @@ let shortenerInput = document.querySelector('.shortener input');
 let shortenerButton = document.getElementById('main-button');
 let shortenedLinks = document.querySelector('.shortened-links');
 let linkContainer = document.querySelectorAll('.shortened-links .link-container');
+let loadingDots = document.querySelector('.loading-dots');
 //let shortenedButtons = document.querySelectorAll('.shortened-links .link-container .btn-squared');
+
 
 let signCreated = false;
 //shortenerInput.oninvalid = setInputError;
@@ -121,6 +123,7 @@ function fetchAPI() {
     shortenerInput.value = "";
     
     if (setInputError2(x)) {
+        loadingDots.setAttribute('style', 'display: block');
         fetch(`https://api.shrtco.de/v2/shorten?url=${x}`)
             .then(res => res.json())
             .then(data => {
@@ -144,8 +147,9 @@ function fetchAPI() {
                 newLinkContainer.appendChild(newLinkSpan);
                 newLinkContainer.appendChild(copyButton);
                 shortenedLinks.appendChild(newLinkContainer);                
-
+                
                 shortenedRefresher();
+                loadingDots.setAttribute('style', 'display: none');
             });
-    }
+        }
 }
