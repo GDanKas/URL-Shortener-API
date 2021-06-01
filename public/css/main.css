@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
 
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+.attribution {
+    text-align: center;
+}
 
 
 * {
@@ -339,10 +346,8 @@ main {
     color: var(--plain-text);
 }
 
-.advanced-cards-container .advanced-card .tail {
-    position: relative;
-    top: 10rem;
-    margin: -5rem auto 0 auto;
+.tail {
+    margin: -5rem auto -1rem auto;
     width: 1rem;
     height: 6rem;
     background: var(--secondary);
@@ -377,6 +382,7 @@ main {
 footer {
     position: relative;
     left: -3rem;
+    top: -1px;
     width: 100vw;
     background-color: var(--footer);
     padding: 5rem 2rem;
@@ -392,11 +398,17 @@ footer .footer-logo {
     filter: invert(99%) sepia(36%) saturate(54%) hue-rotate(156deg) brightness(124%) contrast(100%);
 }
 
-footer h4 {
+footer .link-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .link-block h4 {
     margin: 3.5rem 0 1.5rem 0;
 }
 
-footer a {
+footer .link-block a {
     text-decoration: none;
     color: white;
     font-size: 1.5rem;
@@ -523,8 +535,9 @@ footer ul {
     .nav-purple ul li a{
         color: var(--plain-text);
     }
-    .nav-purple ul li a:hover {
-        color: black;
+    .nav-bar li a:hover, 
+    .nav-login li:first-child a:hover {
+        color: var(--primary);
     }
     .nav-purple ul {
         min-width: 40%;
@@ -579,21 +592,129 @@ footer ul {
         background: url(../images/bg-shorten-desktop.svg) no-repeat;
         background-size: 100% 100%;
         background-color: hsl(257, 27%, 26%);
-        padding: 2rem;
-        border-radius: 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        padding: 3rem 5rem;
         flex-wrap: wrap;
     }
+    
+    .shortener .url-to-shorten {
+        order: 1;
+        min-width: 0;
+        flex: 5;
+    }
+
+    .shortener #main-button {
+        margin: 0 0  0 3rem;
+        order: 2
+    }
+
+    .shortener:nth-child(3) {
+        flex-basis: 100%;
+    }
+
+    .shortener p {
+        order: 3
+    }
+
+    .shortener .loading-dots {
+        order: 4;
+    }
     /*END SHORTENER*/
+
+    /*SHORTENED LINKS*/
+    
+
+    /*END SHORTENED LINKS*/
 
     /*ADVANCED STATS*/
     .advanced-header {
         padding: 0 20vw;
     }
-
     /*END ADVANCED STATS*/
+
+    /*ADVANCED STATS GRID*/
+    .advanced-cards-container {
+        /*display: grid;
+        grid-template-columns: repeat(9,1fr);
+        grid-template-rows: repeat(10,10rem);*/
+        flex-direction: row;
+        display: flex;
+        width: 100%;
+        margin-bottom: 20rem;
+    }
+
+    .advanced-cards-container .advanced-card:first-child {
+        margin-left: 0;
+    }
+
+    .advanced-cards-container .advanced-card:nth-child(3) {
+        margin: 4rem 2rem -4rem 2rem;
+    }
+
+    .advanced-cards-container .advanced-card:nth-child(5) {
+        margin: 8rem 0 -8rem 2rem;
+    }
+
+    .advanced-cards-container .advanced-card {
+        margin: 4rem 2rem;
+    }
+
+    .advanced-cards-container .advanced-card .circle {
+        margin: 0;
+    }
+
+    .tail {
+        margin: 0 -2rem;
+        width: 15rem;
+        height: 1rem;
+    }
+    /*END ADVANCED STATS FLEX*/
+
+    /*BOOST LINKS SECTION*/
+    .boost {
+        left: -15%;
+        width: 102vw;
+        background: url(../images/bg-boost-desktop.svg) no-repeat;
+        background-size: 100% 100%;
+        background-color: hsl(257, 27%, 26%);
+    }
+
+    .boost h3 {
+        font-size: 4rem;
+    }
+
+    footer {
+        position: relative;
+        left: -15%;
+        width: 102vw;
+        background-color: var(--footer);
+        padding: 5rem 15%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    footer .separator {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        width: 50%;
+        margin-top: -10rem;
+    }
+
+    footer .link-block h4 {
+        margin: 0 0 1rem 0;
+    }
+
+    footer .link-block {
+        align-items: flex-start;
+        margin: 0 5%;
+    }
+
+    footer ul {
+        margin: 0;
+        width: 20%;
+    }
+    /*END BOOST LINKS SECTION*/
 }
 
 /* @media screen and (min-width:1366px) {
